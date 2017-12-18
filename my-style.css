@@ -1,7 +1,7 @@
 .slot{
 	border:1px solid #a81c41;
 	width:100%;
-	display:flex;
+	display: flex;
 }
 .time_details{
     text-transform:uppercase;

@@ -2,7 +2,7 @@
 #require('XLSXReader.php');
 
 
-function processPreDay($data){
+function processPreDay($data) {
 	$i = 0;
 	echo "<h2>".escape($data[0][1]) ."</h2>";// we print the date
 	foreach($data as $row) {

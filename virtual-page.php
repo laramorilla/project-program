@@ -13,7 +13,7 @@ if (!class_exists('WP_EX_PAGE_ON_THE_FLY')){
     *   );
     *   new WP_EX_PAGE_ON_THE_FLY($args);
     */
-    class WP_EX_PAGE_ON_THE_FLY 
+    class WP_EX_PAGE_ON_THE_FLY
     {
 
         public $slug ='';
