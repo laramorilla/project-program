@@ -5,9 +5,15 @@ Plugin Name: Program manager plugin
 
 require('XLSXReader.php');
 require('pmanagerlib.php');
+require('DOCXReader.php');
 
 add_shortcode( 'write_long_program', 'write_program' );
 add_action( 'wp_enqueue_scripts', 'my_plugin_register_scripts' );
+
+function read_program(){
+    $docx = new DOCXReader;
+    $docx->readFile('./wp-content/plugins/program-manager/programme-main-v9.docx');
+}
 
 function my_plugin_register_scripts() {
      wp_register_script('my-script',plugins_url( '/my-script.js', __FILE__ ), false, '1.0', 'all' );
