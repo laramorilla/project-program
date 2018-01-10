@@ -65,4 +65,13 @@ function write_program(){
 		$j++;
     }
 
+    ?>
+	<iframe name="Cargar" style="display:none;"></iframe>
+	<form action="drive.php" method="post" target="cargar">
+    Carga la base de datos desde drive:  <input type="text" name="drive" /><br />
+    <input type="submit" name="submit" value="Upload" />
+</form>
+	<?php
+}
+?>
 }
