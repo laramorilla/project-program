@@ -1,5 +1,1 @@
-deploy:
-  provider: heroku
-  api_key: ...
-  on:
-    condition: "php"
+web: php -jar target/dependency/jetty-runner.jar --port $PORT target/project-program-0.1.0.war
