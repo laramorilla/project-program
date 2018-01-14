@@ -1,0 +1,13 @@
+language: php
+before_deploy:
+      # Set up git user name and tag this commit
+      - git config --local user.name "YOUR GIT USER NAME"
+      - git config --local user.email "YOUR GIT USER EMAIL"
+      - git tag "$(date +'%Y%m%d')"
+
+deploy:
+  provider: releases
+  api_key: ${GH_TOKEN}
+  skip_cleanup: true
+  on:
+tags: false
