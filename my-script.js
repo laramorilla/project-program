@@ -9,7 +9,7 @@ function openTab(tab) {
       }
     }
 
-    var x = document.getElementsByClassName("tab") ;
+    var x = document.getElementsByClassName("tab");
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";
     }

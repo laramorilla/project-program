@@ -1,5 +1,18 @@
 <?php
 if (!class_exists('WP_EX_PAGE_ON_THE_FLY')){
+    /**
+    * WP_EX_PAGE_ON_THE_FLY
+    * @author Ohad Raz
+    * @since 0.1
+    * Class to create pages "On the FLY"
+    * Usage: 
+    *   $args = array(
+    *       'slug' => 'fake_slug',
+    *       'post_title' => 'Fake Page Title',
+    *       'post content' => 'This is the fake page content'
+    *   );
+    *   new WP_EX_PAGE_ON_THE_FLY($args);
+    */
     
     class WP_EX_PAGE_ON_THE_FLY 
     {

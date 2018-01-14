@@ -12,7 +12,7 @@
   /*height: 8.5vw;*/
   height: calc(24px + 7.2vw); 
   text-transform:uppercase;
-  font-weight:bold;
+  font-weight: bold;
   }
 
 .titleoverlay_twoline {
