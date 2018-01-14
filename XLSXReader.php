@@ -22,7 +22,7 @@ Key Changes include:
 	Change of class names and method names
 	Removed rowsEx functionality including extraction of hyperlinks
 */
-
+ 
 class XLSXReader {
 	protected $sheets = array();
 	protected $sharedstrings = array();

@@ -2,7 +2,7 @@
 #require('XLSXReader.php');
 
 
-function processPreDay($data) {
+function processPreDay($data){
 	$i = 0;
 	echo "<h2>".escape($data[0][1]) ."</h2>";// we print the date
 	foreach($data as $row) {
@@ -54,7 +54,7 @@ function processPreDay($data) {
 }
 
 function process_pre_talks($data){
-  $xlsx2 = new XLSXReader('./wp-content/plugins/program-manager/programme-pre-v8.xlsx');
+  $xlsx2 = new XLSXReader('./wp-content/plugins/project-program/programme-pre-v8.xlsx');
   $talks = $xlsx2->getSheet("Talks")->getData();
   $res='';
   foreach($talks as $talk) {
@@ -127,7 +127,7 @@ function processDay($data) {
 }
 
 function listTalks($string){
-	$xlsx2 = new XLSXReader('./wp-content/plugins/program-manager/programme-main-v9.xlsx');
+	$xlsx2 = new XLSXReader('./wp-content/plugins/project-program/programme-main-v9.xlsx');
 	$talks = $xlsx2->getSheet("Talks")->getData();
 	foreach($talks as $talk) {
 		//echo $talk[4];
