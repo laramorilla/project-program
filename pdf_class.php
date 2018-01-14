@@ -4,7 +4,6 @@ define('FPDF_FONTPATH',p2pdf_path.'fpdf/font/');
 require(p2pdf_path.'fpdf/fpdf.php');
 require(p2pdf_path.'htmlparser.inc');
 
-//conversion pixel -> millimeter in 72 dpi
 function px2mm($px){
     return $px*25.4/72;
 }
@@ -69,7 +68,6 @@ class PDF extends FPDF
 
     function Header(){
         $this->SetFont('Arial','B',8);
-        //Text color in gray
         $this->SetTextColor(128);
         $this->Cell(0,10,$this->header_text,1,1,'C');
         $this->Ln(10);
@@ -123,7 +121,6 @@ class PDF extends FPDF
     function ChapterBody($txt)
     {
         $this->SetFont('Times','',12);
-        //$this->MultiCell(0,5,$txt,0,"J",0);
 	
 		$this->WriteHTML(stripslashes($txt));
         $this->Ln();
@@ -138,11 +135,9 @@ class PDF extends FPDF
             $this->SetFont('Times','',12);
             $this->SetLeftMargin(20);
             $this->SetRightMargin(20);
-            //$this->MultiCell(0,5,$this->_clear($content),0,"J",0);
 			
             $this->WriteHTML(stripslashes($this->_clear($content)));
             }else{
-                //$this->_page_title($title,$sub_title);
                 $this->SetFont('Times','',12);
                 $this->SetLeftMargin(20);
                 $this->SetRightMargin(20);            
@@ -176,14 +171,12 @@ class PDF extends FPDF
         }
         function WriteHTML2($html)
         {
-            //HTML parser
             $html=str_replace("\n",' ',$html);
             $a=preg_split('/<(.*)>/U',$html,-1,PREG_SPLIT_DELIM_CAPTURE);
             foreach($a as $i=>$e)
             {
                 if($i%2==0)
                 {
-                    //Text
                     if($this->HREF)
                         $this->PutLink($this->HREF,$e);
                     else
@@ -191,12 +184,10 @@ class PDF extends FPDF
                 }
                 else
                 {
-                    //Tag
                     if($e{0}=='/')
                         $this->CloseTag(strtoupper(substr($e,1)));
                     else
                     {
-                        //Extract attributes
                         $a2=explode(' ',$e);
                         $tag=strtoupper(array_shift($a2));
                         $attr=array();
@@ -285,7 +276,6 @@ class PDF extends FPDF
                     }
                     $this->SetX($this->GetX()+$width);
                     $this->SetY($this->GetY()+$height);
-                    //$this->Ln(px2mm($height)+2);
                 }
             }
             if($tag =="UL")
@@ -306,7 +296,6 @@ class PDF extends FPDF
                     $this->mySetTextColor($coul['R'],$coul['G'],$coul['B']);
                     $this->issetcolor=true;
                 }
-                /* TODO: Correct bug */
                 if (isset($attr['FACE']) and in_array(strtolower($attr['FACE']), $this->fontlist)) {
                     $this->SetFont(strtolower($attr['FACE']));
                     $this->issetfont=true;
