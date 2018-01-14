@@ -1,14 +1,13 @@
 language: php
-sudo: required
-
-services:
-  - docker
 before_deploy:
-  - chmod 600 deploy && mv deploy ~/.ssh/id_rsa
-  - curl -O https://raw.githubusercontent.com/EGC-G2-Trabajo-1718/integracion/master/tools/deploy.sh
+      # Set up git user name and tag this commit
+      - git config --local user.name "YOUR GIT USER NAME"
+      - git config --local user.email "YOUR GIT USER EMAIL"
+      - git tag "$(date +'%Y%m%d')"
+
 deploy:
+  provider: releases
+  api_key: ${GH_TOKEN}
   skip_cleanup: true
-  provider: script
-  script: ssh -o StrictHostKeyChecking=no deploy@egc.duckdns.org 'bash -s' < deploy.sh <subsistema> # INSERTAR NOMBRE DEL SUBSISTEMA ESPECIFICADO EN LA WIKI SIN LOS CARACTERES "< >"
   on:
-    branch: master
+tags: false
