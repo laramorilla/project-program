@@ -1,16 +1,14 @@
 <?php 
 /* 
-    Default action once the plugin was activated:
-    1 to enable automatic exportation for all posts except those with the exclude tag
-    0 to disable it and let export only post with the export tag placed inside
+    1 habilita la exportación automática de todos los post, menos los incluidos dentro de tag
+    0 desabilita lo anterior y solo exporta lo que está incluido en tag
 */
 
 $default_post_action = 1; 
 
 /* 
-    Enable or disable category exportation 
-    0 to disable
-    1 to enable
+    0 desahabilita la exportación
+    1 habilita la exportación
 */
 
 $export_category = 1;
