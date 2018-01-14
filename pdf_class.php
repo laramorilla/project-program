@@ -542,17 +542,8 @@ class PDF extends FPDF
     }
 
  function Test_PDF_Class(){
-     $pdf=new PDF('AntonelloCicchese.com',"AntonelloCicchese.com","Copyright Antonello Cicchese info@antonellocicchese.com", "Antonello Cicchese");
-     $pdf->create_page("TITOLO PRINCIPALE","Un testo prodotto da
-     Antonello Cicchese
-     versione 1.0");
-     $pdf->create_page("Capitolo 1","","<strong>Testo della seconda</strong> pagina");
-     $pdf->create_page("Capitolo 1","","<strong>Testo del 1</strong> capitoletto",true,1);
-     $pdf->create_page("Capitolo 2","","Testo del 2 capitoletto",true,2);
-     $pdf->create_page("Capitolo 3","","Testo del 3 capitoletto",true,3);
-     $pdf->create_page("Capitolo 4","","Testo del 4 capitoletto",true,4);
-     $pdf->create_page("Capitolo 5","","Testo del 5 capitoletto",true,5);
-     $pdf->create_page("Conclusioni","Le conclusioni sono importanti!","Traggo ora le mie conclusioni");
+     $pdf=new PDF('CongresoUSPrueba.es',"CongresoUSPrueba.es","CongresoUSPrueba devEGC@us.es", "DevTeam EGC");
+     $pdf->create_page("Titulo","Evolución y Gestión de Código");
      $pdf->write_out();
  }
 ?>
