@@ -121,6 +121,7 @@ function write_program(){
 	<form action="funcionmail.php" method="post" target="suscribirse">
     Introduce aquí tu email si quieres saber cuando se ha modificado el programa!:  <input type="text" name="email" /><br />
     <input type="submit" name="submit" value="¡Enviarme!" />
+     <input type="submit" name="submit" value="Prueba" />
 </form>
 	<?php
 
